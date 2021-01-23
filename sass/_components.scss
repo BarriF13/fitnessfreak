@@ -147,6 +147,7 @@
     left: 0;
     height: 100%;
     width: 3px;
+   
     background-color: var(--color-primary);
     transform: scaleY(0);
     transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
@@ -367,6 +368,7 @@
     width: 1rem;
     margin-right: 0.7rem;
 
+    @supports(-webkit-mask-image: url()) or (mask-image: url()){;
     background-color: var(--color-primary);
 
     -webkit-mask-image: url(../img/chevron-thin-right.svg);
@@ -379,6 +381,7 @@
     // background-size: cover;
 
     //New browsers-Mask
+    }
   }
 }
 ///-------------------
