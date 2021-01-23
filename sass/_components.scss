@@ -191,7 +191,7 @@
   display: flex;
   align-items: center;
   border-bottom: var(--line);
-  
+
   &__heading {
     font-size: 2.24rem;
     font-weight: 300;
@@ -218,14 +218,14 @@
     vertical-align: center;
   }
   &__icon-location {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
   &__rating {
     background-color: var(--color-primary);
     color: #fff;
     margin-left: 3rem;
     align-self: stretch;
-    padding:0 2.25rem;
+    padding: 0 2.25rem;
 
     display: flex;
     justify-content: center;
@@ -233,18 +233,18 @@
     flex-direction: column;
   }
   &__rating-average {
-    font-size: 2.25rem ;
+    font-size: 2.25rem;
     font-weight: 300;
-    margin-bottom:-3px ;
+    margin-bottom: -3px;
   }
   &__rating-count {
-    font-size: 1rem ;
+    font-size: 1rem;
     font-weight: 300;
   }
 }
 ///-------------------
 //Button
-.btn-inline{
+.btn-inline {
   border: none;
   color: var(--color-primary);
   font-size: inherit;
@@ -253,29 +253,98 @@
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 
-  &:hover{
-  color: var(--color-grey-dark-1);  
+  &:hover {
+    color: var(--color-grey-dark-1);
   }
-  &:focus{
+  &:focus {
     outline: none;
     animation: pulsate 1s infinite;
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
 
+///-------------------
+//Paragraph
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+///-------------------
+//List
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
   }
- 
+  &__item::before {
+    content: '';
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+
+    background-color: var(--color-primary);
+
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+    //Older browsers
+    // background-image: url(../img/chevron-thin-right.svg);
+    // background-size: cover;
+
+    //New browsers-Mask
   }
-  @keyframes pulsate {
-    0%{
-      transform: scale(1);
-      box-shadow: none;
+}
+///-------------------
+//Recommend
+.recommend{
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-2);
+  display: flex;
+  align-items: center;
+  
+  &__count{
+    margin-right: auto;
+  }
+  &__friends{
+    
+  }
+
+  &__photo{
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    &:not(:last-child){
+      margin-right: -2rem;
     }
-    50%{
-     transform:  scale(1.2);
-     box-shadow:var(--shadow-light);
-    }
-    100%{
-      transform: scale(1);
-      box-shadow: none;
-    }
-    }
+  
+  }
+}
